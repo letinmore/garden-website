@@ -1,0 +1,242 @@
+/* GLOBAL FIX (VERY IMPORTANT) */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+}
+
+/* HEADER */
+.header {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    z-index: 1000;
+}
+
+.header a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+.header a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background: #2e7d32;
+    transition: 0.3s;
+}
+
+.header a:hover::after {
+    width: 100%;
+}
+
+/* LOGO */
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* NAV BUTTON (Contact highlight) */
+.btn-nav {
+    background: #2e7d32;
+    padding: 8px 18px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.btn-nav:hover {
+    background: #1b5e20;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    background: url('../images/hero.jpeg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay {
+    text-align: center;
+    color: white;
+    background: rgba(0,0,0,0.5);
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.overlay h1 {
+    font-size: 3rem;
+}
+
+/* BUTTONS */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 14px 26px;
+    min-width: 180px; /* KEY: makes them same width */
+
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: #2e7d32;
+    color: white;
+}
+
+.btn-secondary {
+    background: #25D366;
+    color: white;
+}
+
+.btn-email {
+    background: #555;
+    color: white;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.btn-email:hover {
+    background: #333;
+}
+
+/* SECTIONS */
+.section {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.dark {
+    background: #111;
+    color: white;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* TWO COLUMN */
+.two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.two-col img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* VIDEO */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+}
+
+.video-container iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/* GALLERY */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.gallery img {
+    cursor: pointer;
+    filter: brightness(0.9);
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+	filter: brightness(1.1);
+}
+
+/* CONTACT */
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+	flex-wrap: wrap; /* prevents overflow */
+}
+
+.contact {
+    background: #1b1b1b;
+    color: white;
+}
+
+/* FOOTER */
+footer {
+    background: #222;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .two-col {
+        grid-template-columns: 1fr;
+    }
+
+    .overlay h1 {
+        font-size: 2rem;
+    }
+
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+	
+	.header nav {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+}
